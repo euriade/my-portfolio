@@ -28,7 +28,7 @@ export const projectsData = [
     id: "01.",
     title: "MSSC Briefs",
     githubLink: "https://github.com/", //todo: mettre à jour le lien du projet
-    tags: ["Symfony", "JavaScript", "SQL", "Twig", "Bootstrap"],
+    tags: ["FaSymfony", "JavaScript", "SQL", "Twig", "Bootstrap"],
     article: "#", //todo: mettre le lien de l'étude de cas [blog]
     imageUrl: "", //todo: mettre la variable d'import relative à l'image projet
   },
