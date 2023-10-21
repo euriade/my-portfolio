@@ -1,16 +1,29 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { GiOpenBook } from "react-icons/gi";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 const About = () => {
+  const { ref, inView } = useInView({ threshold: 1 });
+  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (inView && Date.now() - timeOfLastClick > 1000) {
+      setActiveSection("À propos");
+    }
+  }, [inView, setActiveSection, timeOfLastClick]);
+
   return (
     <motion.section
-      className="bg-gray-100 w-full p-16"
+      ref={ref}
+      className="bg-gray-100 w-full px-16 py-[7rem] scroll-mt-20"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
+      id="a-propos"
     >
       <div className="max-w-[57rem] mx-auto">
         <h2 className="flex items-center gap-2 font-bold text-2xl capitalize">

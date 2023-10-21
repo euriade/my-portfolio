@@ -10,7 +10,7 @@ import { HiDownload } from "react-icons/hi";
 
 const Introduction = () => {
   return (
-    <section className="grid grid-cols-3 items-center mb-28">
+    <section className="grid grid-cols-3 items-center mb-[10rem]">
       <motion.div
         className="col-span-2 px-5 mx-auto"
         initial={{ opacity: 0, scale: 0 }}
