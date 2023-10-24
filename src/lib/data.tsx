@@ -1,5 +1,7 @@
 // todo: importer les images des projets ici
 
+import { FaSymfony } from "react-icons/fa";
+
 export const linksData = [
   {
     name: "Accueil",
@@ -23,12 +25,17 @@ export const linksData = [
   },
 ] as const;
 
+export const skillsMap = {
+  FaSymfony: () => <FaSymfony />,
+  default: () => <b>{"Icone inconnue"}</b>,
+  // pareil pour le reste
+};
 export const projectsData = [
   {
     id: "01.",
     title: "MSSC Briefs",
     githubLink: "https://github.com/", //todo: mettre à jour le lien du projet
-    tags: ["FaSymfony", "JavaScript", "SQL", "Twig", "Bootstrap"],
+    tags: ["FaSymfony"],
     article: "#", //todo: mettre le lien de l'étude de cas [blog]
     imageUrl: "", //todo: mettre la variable d'import relative à l'image projet
   },
@@ -36,7 +43,7 @@ export const projectsData = [
     id: "02.",
     title: "Portfolio",
     githubLink: "https://github.com/", //todo: mettre à jour le lien du projet
-    tags: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
+    tags: [],
     article: "#", //todo: mettre le lien de l'étude de cas [blog]
     imageUrl: "", //todo: mettre la variable d'import relative à l'image projet
   },
@@ -44,7 +51,7 @@ export const projectsData = [
     id: "03.",
     title: "Projet CDA",
     githubLink: "https://github.com/", //todo: mettre à jour le lien du projet
-    tags: ["undefined"],
+    tags: [],
     article: "#", //todo: mettre le lien de l'étude de cas [blog]
     imageUrl: "", //todo: mettre la variable d'import relative à l'image projet
   },

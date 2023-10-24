@@ -1,13 +1,10 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { useState } from "react";
-import { projectsData } from "@/lib/data";
-import { BsGithub } from "react-icons/bs";
+import { projectsData, skillsMap } from "@/lib/data";
 import Link from "next/link";
-import FaSymfony from "react-icons/fa";
-import ReactDOM from "react-dom";
+import { BsGithub } from "react-icons/bs";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -28,6 +25,7 @@ const Project = ({
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
+
   return (
     <div className="p-5 bg-gray-100 shadow-sm rounded-lg">
       <div
@@ -51,7 +49,13 @@ const Project = ({
       >
         Lire étude de cas
       </Link>
-      {/* <p className="py-6">{tags.map((tag) => ReactDOM.render(`<${tag} />`))}</p> */}
+      <p className="py-6">
+        {tags
+          .map((t) => skillsMap[t] ?? skillsMap.default)
+          .map((Icon) => (
+            <Icon />
+          ))}
+      </p>
       // todo: parser la string en composant React
     </div>
   );
