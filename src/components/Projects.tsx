@@ -1,23 +1,14 @@
 "use client";
 
 import { projectsData } from "@/lib/data";
-import React, { useEffect } from "react";
+import React from "react";
 import { BsWrenchAdjustable } from "react-icons/bs";
 import Project from "./Project";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useActiveSectionContext } from "@/context/active-section-context";
-import { time } from "console";
+import { useSectionInView } from "@/lib/hooks";
 
 const Projects = () => {
-  const { ref, inView } = useInView({ threshold: 0.8 });
-  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection("Projets");
-    }
-  }, [inView, setActiveSection, timeOfLastClick]);
+  const { ref } = useSectionInView("Projets", 0.8);
 
   return (
     <motion.section

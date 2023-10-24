@@ -1,20 +1,12 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { GiOpenBook } from "react-icons/gi";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useActiveSectionContext } from "@/context/active-section-context";
+import { useSectionInView } from "@/lib/hooks";
 
 const About = () => {
-  const { ref, inView } = useInView({ threshold: 1 });
-  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection("À propos");
-    }
-  }, [inView, setActiveSection, timeOfLastClick]);
+  const { ref } = useSectionInView("À propos");
 
   return (
     <motion.section
