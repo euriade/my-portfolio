@@ -1,6 +1,8 @@
 // todo: importer les images des projets ici
 
-import { FaSymfony } from "react-icons/fa";
+import { BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
+import { FaBootstrap, FaReact, FaSymfony } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
 
 export const linksData = [
   {
@@ -27,28 +29,34 @@ export const linksData = [
 
 export const skillsMap = {
   FaSymfony: () => <FaSymfony />,
+  BiLogoJavascript: () => <BiLogoJavascript />,
+  FaBootstrap: () => <FaBootstrap />,
+  SiNextdotjs: () => <SiNextdotjs />,
+  FaReact: () => <FaReact />,
+  BiLogoTypescript: () => <BiLogoTypescript />,
+  SiTailwindcss: () => <SiTailwindcss />,
   default: () => <b>{"Icone inconnue"}</b>,
   // pareil pour le reste
 };
 export const projectsData = [
   {
-    id: "01.",
+    id: 1,
     title: "MSSC Briefs",
     githubLink: "https://github.com/", //todo: mettre à jour le lien du projet
-    tags: ["FaSymfony"],
+    tags: ["FaSymfony", "BiLogoJavascript", "FaBootstrap"],
     article: "#", //todo: mettre le lien de l'étude de cas [blog]
     imageUrl: "", //todo: mettre la variable d'import relative à l'image projet
   },
   {
-    id: "02.",
+    id: 2,
     title: "Portfolio",
     githubLink: "https://github.com/", //todo: mettre à jour le lien du projet
-    tags: [],
+    tags: ["SiNextdotjs", "FaReact", "BiLogoTypescript", "SiTailwindcss"],
     article: "#", //todo: mettre le lien de l'étude de cas [blog]
     imageUrl: "", //todo: mettre la variable d'import relative à l'image projet
   },
   {
-    id: "03.",
+    id: 3,
     title: "Projet CDA",
     githubLink: "https://github.com/", //todo: mettre à jour le lien du projet
     tags: [],

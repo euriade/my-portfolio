@@ -14,28 +14,13 @@ const Project = ({
   githubLink,
   tags,
   article,
-  imageUrl,
 }: ProjectProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
   return (
     <div className="p-5 bg-gray-100 shadow-sm rounded-lg">
-      <div
-        className={`background-image ${isHovered ? "hovered" : ""}`}
-        style={{ backgroundImage: `url(${imageUrl})` }}
-      ></div>
       <p className="text-4xl font-bold text-center p-8">{id}</p>
       <h4 className="text-2xl">{title}</h4>
       <a
-        className="flex items-center py-6 gap-2"
+        className="flex items-center py-6 gap-2 underline font-bold"
         href={githubLink}
         target="_blank"
         rel="noopener noreferrer"
@@ -49,14 +34,13 @@ const Project = ({
       >
         Lire étude de cas
       </Link>
-      <p className="py-6">
+      <p className="flex py-6 text-2xl gap-2">
         {tags
           .map((t) => skillsMap[t] ?? skillsMap.default)
           .map((Icon) => (
             <Icon />
           ))}
       </p>
-      // todo: parser la string en composant React
     </div>
   );
 };

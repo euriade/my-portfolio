@@ -7,8 +7,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin, BsGithub } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 const Introduction = () => {
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+
   return (
     <section className="grid grid-cols-3 items-center mb-[10rem]">
       <motion.div
@@ -30,6 +33,10 @@ const Introduction = () => {
           <Link
             href="#contact"
             className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition shadow-xl"
+            onClick={() => {
+              setActiveSection("Contact");
+              setTimeOfLastClick(Date.now());
+            }}
           >
             Me contacter{" "}
             <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
@@ -70,6 +77,7 @@ const Introduction = () => {
             src={IntroImg}
             alt="Jessica portrait"
             className="rounded-full object-cover border-[0.5rem] border-white shadow-xl"
+            draggable="false"
           />
         </motion.div>
 

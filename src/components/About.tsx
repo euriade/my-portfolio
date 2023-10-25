@@ -31,6 +31,7 @@ const About = () => {
             ✨
           </span>
           <br />
+          <br />
           Je me prénomme <strong>Jessica</strong>, j’ai <strong>26 ans</strong>{" "}
           et je suis en alternance pour devenir{" "}
           <strong>Concepteur Développeur d’Applications</strong>. Un nom
@@ -46,8 +47,10 @@ const About = () => {
           <strong>articles</strong> et <strong>tutoriels</strong> pour votre{" "}
           <strong>veille technologique</strong> ainsi qu’une partie de ce que je
           suis, au travail et en-dehors.
-          <br /> Installez-vous confortablement, buvez un bon thé et passons à
-          la suite !{" "}
+          <br />
+          <br />
+          Installez-vous confortablement, buvez un bon thé et passons à la suite
+          !{" "}
           <span role="img" aria-label="tea">
             🍵
           </span>

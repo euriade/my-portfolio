@@ -28,8 +28,8 @@ const Projects = () => {
           Projets
         </h2>
         <div className="grid grid-cols-3 gap-5 my-12">
-          {projectsData.map((project, index) => (
-            <React.Fragment key={index}>
+          {projectsData.map((project) => (
+            <React.Fragment key={project.id}>
               <Project {...project} />
             </React.Fragment>
           ))}
